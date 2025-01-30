@@ -1,0 +1,9 @@
+.rightSidebar{
+    background-color: antiquewhite;
+}
+
+.rightSidebar ul{
+    list-style: none;
+    padding: unset;
+}
+

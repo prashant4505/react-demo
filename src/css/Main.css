@@ -1,0 +1,29 @@
+.react-logo{
+    width: 50px;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+  }
+  
+  .pagination button:hover {
+    background-color: #ddd;
+  }
+  
+/** Contact form css */
+.contact-form{
+    text-align: left;
+}
