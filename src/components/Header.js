@@ -26,6 +26,9 @@ function Header() {
                 <Link className="nav-link" to="/page-three">Page Three</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/posts">Submit Post</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/contact-form">Contact Form</Link>
               </li>
             </ul>

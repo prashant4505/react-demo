@@ -24,6 +24,6 @@
   }
   
 /** Contact form css */
-.contact-form{
-    text-align: left;
+form {
+  text-align: left;
 }
