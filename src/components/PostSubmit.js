@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, TextField } from "@mui/material";
 
 const PostSubmit = () => {
   const [userId, setUserId] = useState('');
@@ -7,6 +8,14 @@ const PostSubmit = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+
+  const handleChange = (e) => {
+    // Only allow numeric values
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) { // Regex checks if the value is numeric (zero or more digits)
+      setUserId(value);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,38 +58,41 @@ const PostSubmit = () => {
       <h2>Submit Post</h2>
       <form className="post-submit" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="userId">User ID:</label>
-          <input
-            type="text"
-            id="userId"
-            className="form-control"
-            value={userId}
-            onChange={(e) => setUserId(e.target.value)}
-            required
-          />
+        <TextField
+          id="userId"
+          label="User ID"
+          variant="outlined"
+          className="form-control mb-2"
+          value={userId}
+          onChange={handleChange}
+          required
+        />
         </div>
         <div>
-          <label htmlFor="title">Title:</label>
-          <input
-            type="text"
+          <TextField
             id="title"
-            className="form-control"
+            className="form-control mb-2"
+            variant="outlined"
+            label="Title" 
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
         </div>
         <div>
-          <label htmlFor="body">Body:</label>
-          <textarea
+          <TextField
             id="body"
+            variant="outlined"
+            label="Body" 
             value={body}
-            className="form-control"
+            multiline
+            rows={4}
+            className="form-control mb-2"
             onChange={(e) => setBody(e.target.value)}
             required
           />
         </div>
-        <button type="submit" disabled={isSubmitting} className="btn btn-primary mt-2">
+        <button type="submit" disabled={isSubmitting} variant="contained" className="btn btn-primary mt-2">
           {isSubmitting ? 'Submitting...' : 'Submit Post'}
         </button>
       </form>

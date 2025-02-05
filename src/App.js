@@ -20,6 +20,7 @@ import Portfolio from './components/Portfolio';
 import Demo from './components/Demo';
 import PostSubmit from './components/PostSubmit';
 import DemoForm from './components/DemoForm';
+import Material from './components/Material';
 // import logo from './logo.svg';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
                 <Route path="/posts" element={<PostSubmit />} />
                 <Route path="/demo" element={<Demo />} />
                 <Route path="/demo-form" element={<DemoForm />} />
+                <Route path="/material-ui" element={<Material />} />
               </Routes>
             </main>
           </div>
